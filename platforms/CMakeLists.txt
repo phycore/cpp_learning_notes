@@ -3,8 +3,6 @@ add_library(platforms "")
 target_sources(platforms
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/plat_memory_${OS_SYSTEM}.c
-    PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/plat_memory.h
 )
 
 target_include_directories(platforms
