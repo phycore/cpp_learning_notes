@@ -27,6 +27,8 @@ function(add_test_target target_name test_lib)
     add_test(NAME ${target_name} COMMAND ${target_name})
 endfunction()
 
+add_library(dummy INTERFACE) # dummy is empty source.
+
 add_executable(counter_utests test_counter.cpp)
 add_test_target(counter_utests counter)
 
@@ -34,7 +36,7 @@ add_executable(structure_utests test_struct.cpp)
 add_test_target(structure_utests structure) #structure is header only lib.
 
 add_executable(pointer_utests test_pointer.cpp)
-add_test_target(pointer_utests spdlog)
+add_test_target(pointer_utests dummy)
 
 set_tests_properties(
     counter_utests
