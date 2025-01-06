@@ -33,8 +33,12 @@ add_test_target(counter_utests counter)
 add_executable(structure_utests test_struct.cpp)
 add_test_target(structure_utests structure) #structure is header only lib.
 
+add_executable(pointer_utests test_pointer.cpp)
+add_test_target(pointer_utests spdlog)
+
 set_tests_properties(
     counter_utests
     structure_utests
+    pointer_utests
     PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
 )
