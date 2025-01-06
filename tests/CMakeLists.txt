@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.14)
 project(cpp_learning_notes_utests CXX C)
 
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 11)
+if(MSVC)
+#error c7555: use of designated initializers requires at least '/std:c++20
+    set(CMAKE_CXX_STANDARD 20)
+endif()
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 include(FetchContent)
 message(STATUS "Package C++ Catch2 Test framework will be downloaded and used.")
 FetchContent_Declare(
@@ -10,20 +18,23 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-set(CPP_LEARN_NOTES_UTESTS_SOURCES
-    test_counter.cpp
-)
-
 enable_testing()
 
-function(cpp_learn_utests test_target test_lib)
-    add_executable(${test_target} ${CPP_LEARN_NOTES_UTESTS_SOURCES})
+function(add_test_target target_name test_lib)
+    target_link_libraries(${target_name} PRIVATE ${test_lib})
+    target_link_libraries(${target_name} PRIVATE Catch2::Catch2WithMain)
 
-    target_link_libraries(${test_target} PRIVATE ${test_lib})
-    target_link_libraries(${test_target} PRIVATE Catch2::Catch2WithMain)
-
-    add_test(NAME ${test_target} COMMAND ${test_target})
-    set_tests_properties(${test_target} PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed")
+    add_test(NAME ${target_name} COMMAND ${target_name})
 endfunction()
 
-cpp_learn_utests(counter_utests counter)
+add_executable(counter_utests test_counter.cpp)
+add_test_target(counter_utests counter)
+
+add_executable(structure_utests test_struct.cpp)
+add_test_target(structure_utests structure) #structure is header only lib.
+
+set_tests_properties(
+    counter_utests
+    structure_utests
+    PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
+)
