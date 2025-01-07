@@ -1,5 +1,11 @@
 ## C++ 學習筆記
 
+### 主題
+#### 物件導向程式設計(Object-Oriented Programming)
+- ##### [封裝(Encapsulation)](docs/encapsulation_cpp.md#top)
+- ##### 繼承(Inheritance)
+- ##### 多型 (Polymorphism)
+
 #### 先問自己為何要學 C++?
 1. 非本科從事數年寫程式碼工作，除了遇過一些有趣的數學與演算法問題，**高規格眼光看待**，大部分還是從事低階碼農的工作。
 
