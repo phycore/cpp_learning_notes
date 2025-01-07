@@ -1,5 +1,7 @@
 ## C++ 學習筆記
 
+![Builds](https://github.com/phycore/cpp_learning_notes/actions/workflows/Builds.yml/badge.svg)
+
 ### 主題
 #### 物件導向程式設計(Object-Oriented Programming)
 - ##### [封裝(Encapsulation)](docs/encapsulation_cpp.md#top)
