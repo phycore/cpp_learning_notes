@@ -89,7 +89,7 @@
     - 先增後減
     - 先減後增
 
-1. C 語言如何做封裝。
+1. [C 語言如何做封裝](/docs/encapsulation_c.md)。
 
 1. 後記: 優先專注程式碼運行與要點整理。
     - 待補充物件導向的專有名詞。
@@ -100,7 +100,7 @@
         - 實例(instance)。
 
 1. 參考資料
-    1. 李運華 (2021)。《編寫程式的邏輯: 如何用物件導向實做複雜的業務需求》台北市: 碩博文化。
-    1. Stanley B. Lippman(2012)。《C++ Primer 中文版》5th edition。黃銘偉譯。台北市: 碁峯資訊。
-    1. Stanley B. Lippman(2012): *C++ Primer 5th edition* U.S., Addition-Wisely
+    1. 李運華 (2021)。《編寫程式的邏輯: 如何用物件導向實做複雜的業務需求》。ch02: 物件導向理論。台北市: 碩博文化。
+    1. Stanley B. Lippman(2012)。《C++ Primer 中文版》5th edition。ch7: 類別。黃銘偉譯。台北市: 碁峯資訊。
+    1. Stanley B. Lippman(2012): *C++ Primer 5th edition*, ch7: Classes, U.S., Addition-Wisely
     1. [Microsoft Learn Challenge: Microsoft C++, C, and Assembler documentation](https://learn.microsoft.com/en-us/cpp/?view=msvc-170)
