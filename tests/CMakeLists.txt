@@ -38,9 +38,13 @@ add_test_target(structure_utests structure) #structure is header only lib.
 add_executable(pointer_utests test_pointer.cpp)
 add_test_target(pointer_utests dummy)
 
+add_executable(memory_utests test_memory.cpp)
+add_test_target(memory_utests platforms)
+
 set_tests_properties(
     counter_utests
     structure_utests
     pointer_utests
+    memory_utests
     PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
 )
