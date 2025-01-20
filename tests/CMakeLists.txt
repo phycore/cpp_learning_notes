@@ -22,6 +22,7 @@ enable_testing()
 
 function(add_test_target target_name test_lib)
     target_link_libraries(${target_name} PRIVATE ${test_lib})
+    target_link_libraries(${target_name} PRIVATE platforms)
     target_link_libraries(${target_name} PRIVATE Catch2::Catch2WithMain)
 
     add_test(NAME ${target_name} COMMAND ${target_name})
@@ -39,7 +40,7 @@ add_executable(pointer_utests test_pointer.cpp)
 add_test_target(pointer_utests dummy)
 
 add_executable(memory_utests test_memory.cpp)
-add_test_target(memory_utests platforms)
+add_test_target(memory_utests dummy)
 
 add_executable(math_utests test_math.cpp)
 add_test_target(math_utests mathematics)
