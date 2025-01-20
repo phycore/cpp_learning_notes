@@ -41,10 +41,14 @@ add_test_target(pointer_utests dummy)
 add_executable(memory_utests test_memory.cpp)
 add_test_target(memory_utests platforms)
 
+add_executable(math_utests test_math.cpp)
+add_test_target(math_utests mathematics)
+
 set_tests_properties(
     counter_utests
     structure_utests
     pointer_utests
     memory_utests
+    math_utests
     PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
 )
