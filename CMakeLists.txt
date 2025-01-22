@@ -27,6 +27,33 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
     set(OS_SYSTEM "linux")
 endif()
 
+# Compiler
+if (CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+    message(STATUS "Using MSVC compiler")
+endif()
+
+if (CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    message(STATUS "Using GNU compiler")
+endif()
+
+if (CMAKE_CXX_COMPILER_ID MATCHES Clang)
+    message(STATUS "Using LLVM Clang compiler")
+endif()
+
+# Processor architechture
+if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message(STATUS "It's 64 bit architechture")
+else()
+    message(STATUS "It's 32 bit architechture")
+endif()
+
+# Processor name
+if (CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64")
+    message(STATUS "x86_64 architecture detected.")
+elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "AMD64")
+    message(STATUS "AMD64 architecture detected.")
+endif()
+
 # External project
 include(FetchContent)
 message(STATUS "Package spdlog will be used.")

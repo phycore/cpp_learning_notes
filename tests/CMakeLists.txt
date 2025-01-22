@@ -45,11 +45,15 @@ add_test_target(memory_utests dummy)
 add_executable(math_utests test_math.cpp)
 add_test_target(math_utests mathematics)
 
+add_executable(alignment_utests test_alignment.cpp)
+add_test_target(alignment_utests dummy)
+
 set_tests_properties(
     counter_utests
     structure_utests
     pointer_utests
     memory_utests
     math_utests
+    alignment_utests
     PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
 )
