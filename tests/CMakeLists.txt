@@ -51,6 +51,9 @@ add_test_target(alignment_utests dummy)
 add_executable(union_utests test_union.cpp)
 add_test_target(union_utests dummy)
 
+add_executable(endian_utests test_endian.cpp)
+add_test_target(endian_utests endian)
+
 set_tests_properties(
     counter_utests
     structure_utests
@@ -59,5 +62,6 @@ set_tests_properties(
     math_utests
     alignment_utests
     union_utests
+    endian_utests
     PROPERTIES FAIL_REGULAR_EXPRESSION "[^a-z]Error;ERROR;Failed"
 )

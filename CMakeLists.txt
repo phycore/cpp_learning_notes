@@ -54,6 +54,15 @@ elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "AMD64")
     message(STATUS "AMD64 architecture detected.")
 endif()
 
+# Endian
+if (CMAKE_CXX_BYTE_ORDER STREQUAL "BIG_ENDIAN")
+    message(STATUS "CXX: Big endian.")
+    add_compile_definitions(IS_BIG_ENDIAN=1)
+else()
+    message(STATUS "CXX: Little endian")
+    add_compile_definitions(IS_BIG_ENDIAN=0)
+endif()
+
 # External project
 include(FetchContent)
 message(STATUS "Package spdlog will be used.")
