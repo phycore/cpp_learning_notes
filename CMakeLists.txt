@@ -74,6 +74,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(spdlog)
 
+add_subdirectory(main)
 add_subdirectory(src)
 add_subdirectory(platforms)
 
